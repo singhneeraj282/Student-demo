@@ -10,28 +10,21 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.util.Date;
 
+@SuppressWarnings({"unchecked","rawtypes"})
 @ControllerAdvice
-@RestController
 public class CustomizeExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(StudentNotFoundException.class)
     public final ResponseEntity<ErrorDetails> handleUserNotFoundException(StudentNotFoundException ex, WebRequest request) {
-        ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(),
-                request.getDescription(false));
+        ErrorDetails errorDetails = new ErrorDetails(new Date(), "Student does not exist with given roll number",
+                "Provide correct roll number");
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(StudentAlreadyExistException.class)
     public final ResponseEntity<ErrorDetails> handleUserNotFoundException(StudentAlreadyExistException ex, WebRequest request) {
-        ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(),
-                request.getDescription(false));
-        return new ResponseEntity<>(errorDetails, HttpStatus.CONFLICT);
-    }
-
-    @ExceptionHandler(Exception.class)
-    public final ResponseEntity<ErrorDetails> handleAllExceptions(Exception ex, WebRequest request) {
-        ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(),
-                request.getDescription(false));
-        return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+        ErrorDetails errorDetails = new ErrorDetails(new Date(), "Student already exist",
+                "Should provide with correct id which does not exist");
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 }

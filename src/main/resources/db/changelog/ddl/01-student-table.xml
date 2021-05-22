@@ -10,6 +10,7 @@
             <column autoIncrement="true" name="id" type="Long">
                     <constraints primaryKey="true"/>
             </column>
+            <column name="roll_number" type = "Long"/>
             <column name="first_name" type="varchar(255)"/>
             <column name="middle_name" type="varchar(255)"/>
             <column name="last_name" type="varchar(255)"/>

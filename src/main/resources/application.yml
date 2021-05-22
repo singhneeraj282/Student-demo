@@ -1,13 +1,6 @@
 server:
   port: 8090
 
-
-springfox:
-  documentation:
-    swagger:
-      v2:
-        path: /swagger.son
-
 #liquibase
 spring:
   liquibase:

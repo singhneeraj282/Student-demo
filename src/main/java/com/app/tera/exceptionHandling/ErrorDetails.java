@@ -1,7 +1,10 @@
 package com.app.tera.exceptionHandling;
 
+import lombok.Getter;
+
 import java.util.Date;
 
+@Getter
 public class ErrorDetails {
     private Date timestamp;
     private String message;

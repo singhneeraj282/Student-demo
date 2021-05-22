@@ -1,26 +1,33 @@
 package com.app.tera.entity;
 
 import com.app.tera.enums.Section;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "STUDENT")
-@Getter
-@Setter
+@Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
 
+    @Column(name= "roll_number")
+    @NotNull(message = "Roll number should not be empty")
+    private Long rollNumber;
+
     @Column(name = "first_name")
-    @NotBlank(message = "First name should not be empty")
+    @NotNull(message = "First name should not be empty")
     private String firstName;
 
     @Column(name = "middle_name")
@@ -33,7 +40,7 @@ public class Student {
     private String fatherName;
 
     @Column(name = "email")
-    @NotBlank(message = "Email should not be empty")
+    @NotNull(message = "Email should not be empty")
     private String email;
 
     @Column(name = "date_of_birth")
@@ -47,8 +54,7 @@ public class Student {
     private String address;
 
     @Column(name = "mobile_number", length = 10)
-    @NotNull
-    @NotBlank(message = "Please enter your mobile number")
+    @NotNull(message = "Please enter your mobile number")
     private Long mobileNumber;
 
 
