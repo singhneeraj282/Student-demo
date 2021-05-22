@@ -1,4 +1,4 @@
-package com.app.tera.Student.demo.config;
+package com.app.tera.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
