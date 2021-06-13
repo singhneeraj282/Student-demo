@@ -1,6 +1,6 @@
-package com.app.tera.repository;
+package com.app.tera.student.demo.repository;
 
-import com.app.tera.entity.Student;
+import com.app.tera.student.demo.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

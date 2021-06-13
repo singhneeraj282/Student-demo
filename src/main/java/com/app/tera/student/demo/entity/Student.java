@@ -1,14 +1,11 @@
-package com.app.tera.entity;
+package com.app.tera.student.demo.entity;
 
-import com.app.tera.enums.Section;
+import com.app.tera.student.demo.enums.Section;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
@@ -16,6 +13,9 @@ import java.time.LocalDate;
 @Table(name = "STUDENT")
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

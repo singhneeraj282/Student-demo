@@ -1,9 +1,9 @@
-package com.app.tera.controller;
+package com.app.tera.student.demo.controller;
 
-import com.app.tera.entity.Student;
-import com.app.tera.exceptionHandling.StudentAlreadyExistException;
-import com.app.tera.exceptionHandling.StudentNotFoundException;
-import com.app.tera.service.StudentService;
+import com.app.tera.student.demo.entity.Student;
+import com.app.tera.student.demo.exceptionHandling.StudentAlreadyExistException;
+import com.app.tera.student.demo.exceptionHandling.StudentNotFoundException;
+import com.app.tera.student.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.app.tera.exceptionHandling;
+package com.app.tera.student.demo.exceptionHandling;
 
 import lombok.Getter;
 

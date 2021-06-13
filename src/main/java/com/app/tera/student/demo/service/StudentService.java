@@ -1,7 +1,7 @@
-package com.app.tera.service;
+package com.app.tera.student.demo.service;
 
-import com.app.tera.entity.Student;
-import com.app.tera.repository.StudentRepository;
+import com.app.tera.student.demo.entity.Student;
+import com.app.tera.student.demo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,6 @@ public class StudentService {
     public Student registerStudent(Student student){
         return studentRepository.save(student);
     }
-
     public Optional<Student> getStudent(Long rollNumber){
         return studentRepository.findByRollNumber(rollNumber);
     }
